@@ -1,4 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항</title>
+</head>
+<style>
+    .section {
+        font-size: 16px !important;
+        margin: 1rem 0;
+        padding: 1rem;
+        background-color:#fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+        font-family: 'Segoe UI', 'Apple SD Gothic Neo', Arial, sans-serif;
+    }
+    
+    .slds-input {
+        background-color : #fff;
+    }
+    
+    .title {
+        font-size : 24px;
+    }
+    
+    .required {
+        color : #db372d;
+        margin: 0 4px;
+    }
+    
+    .description {
+        font-size : 14px !important;
+    }
+    
+    .main-description {
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+        font-family: 'Segoe UI', 'Apple SD Gothic Neo', Arial, sans-serif;
+    }
+</style>
+<script>
+    CKEDITOR.timestamp = '4.24.0.4';
+    var protocolAndHost = window.location.protocol + '//' + window.location.host;
+    var editor = CKEDITOR.replace('00NHu00002EFGtDMAX', {
+        removePlugins : 'elementspath,maximize,image,tabletools,liststyle,contextmenu,resize',
+        baseHref : protocolAndHost + '/ckeditor/ckeditor-4.x/rel/',
+        customConfig : '/ckeditor/ckeditor-4.x/rel/sfdc-config.js',
+        height : '170',
+        bodyId : '00NHu00002EFGtDMAX_rta_body',
+        toolbar : 'SalesforceBasic',
+        sfdcLabels :{CkeLineHeight : { doubleValue : '더블', secondValue : '1.15', singleValue : '단일', thirdValue : '1.5', title : '줄 높이'}, CkeCodeBlock : { addCodeSample : '코드 샘플 추가'}, CkeQuickText : { title : '빠른 텍스트 삽입'}, CkeMediaEmbed : { description : '승인된 비디오 소스에서 &lt;iframe&gt; 코드를 사용합니다.', example : '\n            \n                &lt;iframe width=\&quot;560\&quot; height=\&quot;315\&quot; src=\&quot;https://www.youtube.com/embed/KcOm0TNvKBA\&quot; frameborder=\&quot;0\&quot; allowfullscreen&gt;&lt;/iframe&gt;\n            \n        ', exampleTitle : '예:', iframeMissing : '잘못된 &lt;iframe&gt; 요소입니다. 승인된 사이트의 유효한 코드를 사용하십시오.', subtitle : '여기에 &amp;lt;iframe&amp;gt; 코드 붙여넣기:', title : '멀티미디어 콘텐츠 포함'}, CkeImageMenu : { pasteUrl : '이미지 URL 붙여넣기', title : '메시지에 이미지 삽입', uploadCms : 'Salesforce CMS', uploadFile : ' 탐색 또는 업로드', uploadSFFile : 'Salesforce Files', uploadUrl : '웹 이미지'}, CkeImagePaste : { CkeImagePasteWarning : 'Firefox에서 이미지 붙여넣기가 올바르게 작동되지 않습니다. 대신 [이미지 위치 복사]를 사용하십시오.'}, CkeImageDialog : { btn_insert : '삽입', btn_insert_tooltip : '이미지 삽입', btn_upadte : '업데이트', btn_update : '업데이트', btn_update_tooltip : '이미지 업데이트', defaultImageDescription : '사용자 추가 이미지', error : '오류:', httpUrlWarning : 'http URL을 사용하시겠습니까? http 이미지 URL을 사용하면 비보안 콘텐츠에 대한 보안 경고가 나타날 수 있습니다. 이러한 경고를 피하려면 https 이미지 URL을 대신 사용하십시오.', imageUploadLimit_info : '최대 업로드 이미지 수를 초과했습니다.', infoTab : '웹 주소', infoTab_desc : '상세 설명', infoTab_desc_info : '시각 장애가 있는 사용자를 위해 이미지에 대한 설명 입력', infoTab_url : 'URL', infoTab_url_info : '예: http://www.mysite.com/myimage.jpg', invalidUrlError : 'http:, https:, data:, //, / 또는 상대 URL 구성만 사용할 수 있습니다.', missingUrlError : 'URL을 입력해야 합니다.', title : '이미지 삽입', uploadTab : '이미지 업로드', uploadTab_desc : '상세 설명', uploadTab_desc_info : '시각 장애가 있는 사용자를 위해 이미지에 대한 설명 입력', uploadTab_file : '이미지 선택', uploadTab_file_info : '최대 크기는 1MB입니다. PNG, GIF 또는 JPEG 전용', wrongFileTypeError : '.gif .jpeg 및 .png 파일만 삽입할 수 있습니다.'}, sfdcSwitchToText : { sfdcSwitchToTextAlt : '일반 텍스트 사용'}, CkeSmartLink : { SmartLinkContextMenuEdit : '스마트 링크 편집', title : '스마트 링크 삽입'}},
+        contentsCss: ['/ckeditor/ckeditor-4.x/rel/contents.css', '/sCSS/65.0/sprites/1755548150000/Theme3/ko/gc/CKEditor.css', '/sCSS/65.0/sprites/1755548150000/Theme3/ko/gc/HtmlDetailElem.css'],
+        disableNativeSpellChecker : false,
+        language : 'ko',
+        allowIframe : false,
+        isPardotOrg : false,
+        isCmsOnly : false,
+        sharedSpaces : { top : 'cke_topSpace', bottom : ' cke_bottomSpace' }
+        ,filebrowserImageUploadUrl : '/_ui/common/request/servlet/RtaImageUploadServlet?_CONFIRMATIONTOKEN=VmpFPSxNakF5Tmkwd01pMHdNbFF3TWpvek1qbzBNUzR3TnpoYSxRZS02ckM5alVaYjVCTmhOQzFDaGdrN2J0ZEVjMVV3RHdPaDZHbnk3S0tvPSxOR0ZtTXpjMg=='
+    });
 
+    editor.on('instanceReady', function( evt ) {
+        try {
+            var id = evt.editor.name;
+            CKiframe = document.getElementById('cke_' + id).querySelector('iframe');
+            meta = document.createElement('meta');
+            meta.setAttribute('name', 'referrer');
+            meta.setAttribute('content', 'no-referrer');
+            CKiframe.contentDocument.head.appendChild(meta);
+        } catch(e) {}
+    } );
+
+</script>
+<body>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHu00000xnhih" method="POST">
         <input type="hidden" name="Campaign_ID" value="701Hu000002QRviIAG" />
         <input type="hidden" name="member_status" value="Responded" />
@@ -98,3 +172,5 @@
             <button type="submit" class="slds-button_brand">제출</button>
         </div>
     </form>
+</body>
+</html>
