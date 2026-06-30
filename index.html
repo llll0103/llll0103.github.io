@@ -1,35 +1,491 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.c360a.salesforce.com/beacon/c360a/4489b089-e5f0-444c-8f12-fdaca230979b/scripts/c360a.min.js?wtcp_id=1NDKa00000006naOAA"></script>
-    <title>문의사항2 (utm)</title>
-</head>
-<style>
-    body {
-        background:#e1eddf;
-        padding : 1rem;
-    }
-</style>
-<body>
-    얄로리로리~
+<!-- saved from url=(0046)file:///Users/isaemi/Downloads/contact-us.html -->
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <div id="utm-debug" style="margin-top:1rem; padding:1rem; background:#fff; border-radius:8px; font-family:monospace; font-size:13px;"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us</title>
 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      :root {
+        --colors--purple-500: #5b52ff;
+        --colors--purple-600: #4d34f4;
+        --colors--black: #0a0d14;
+        --colors--white: #ffffff;
+        --colors--grey: #71717a;
+        --colors--grey-light: #fafafa;
+        --colors--border: #e2e4e9;
+        --radius-8px: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background-color: var(--colors--white);
+        color: var(--colors--black);
+        display: flex;
+        justify-content: center;
+        padding: 64px 20px;
+      }
+
+      .form-wrapper {
+        width: 100%;
+        max-width: 480px;
+      }
+
+      .form-heading {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 12px;
+        color: var(--colors--black);
+        letter-spacing: -0.02em;
+      }
+
+      .form-subtext {
+        font-size: 1rem;
+        color: var(--colors--grey);
+        margin: 0 0 32px;
+        line-height: 1.5;
+      }
+
+      .field-group {
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        display: block;
+        color: var(--colors--black);
+        margin-bottom: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .form-input {
+        width: 100%;
+        min-height: 3rem;
+        border: none;
+        border-bottom: 1px solid var(--colors--border);
+        font-size: 0.7rem;
+        font-family: "Inter", sans-serif;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: var(--colors--purple-500);
+      }
+
+      .form-input::placeholder {
+        color: #c9c9c9;
+      }
+
+      .button {
+        width: 100%;
+        margin-top: 8px;
+        border: 1px solid var(--colors--purple-500);
+        background-color: var(--colors--purple-500);
+        color: var(--colors--white);
+        text-align: center;
+        border-radius: var(--radius-8px);
+        justify-content: center;
+        align-items: center;
+        padding: 0.875rem 1.125rem;
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        line-height: 1.5;
+        cursor: pointer;
+        display: flex;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+      }
+
+      .button:hover {
+        background-color: var(--colors--purple-600);
+        border-color: var(--colors--purple-600);
+      }
+
+      /* Interests */
+      .interests-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 520px) {
+        .interests-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .interest-card {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        border: 1px solid var(--colors--border);
+        border-radius: var(--radius-8px);
+        padding: 14px 16px;
+        cursor: pointer;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
+      }
+
+      .interest-card:hover {
+        border-color: #c7c9ff;
+        background-color: #fafaff;
+      }
+
+      .interest-card.is-checked {
+        border-color: var(--colors--purple-500);
+        background-color: #f5f4ff;
+      }
+
+      .interest-card input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        margin: 2px 0 0;
+        flex-shrink: 0;
+        border: 1.5px solid #b9bac2;
+        border-radius: 4px;
+        background-color: var(--colors--white);
+        cursor: pointer;
+        position: relative;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
+      }
+
+      .interest-card input[type="checkbox"]:checked {
+        border-color: var(--colors--purple-500);
+        background-color: var(--colors--purple-500);
+      }
+
+      .interest-card input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .interest-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .interest-title {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--colors--black);
+        line-height: 1.4;
+      }
+
+      .interest-subtext {
+        font-size: 0.7rem;
+        color: var(--colors--grey);
+      }
+
+      .interest-info {
+        margin-left: auto;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: #c2c4cc;
+      }
+
+      .required-mark {
+        color: #e5484d;
+        margin-left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <h1 class="form-heading">Contact Us</h1>
+      <p class="form-subtext">
+        Automate tasks with superhuman Document AI and unlock the powerful
+        capabilities of Solar LLM. Contact us to elevate your work intelligence
+        today.
+      </p>
+      <form
+        action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&amp;orgId=00DJP000001mm3N"
+        method="POST"
+      >
+        <input type="hidden" name="oid" value="00DJP000001mm3N" />
+        <input type="hidden" name="retURL" value="https://www.upstage.ai" />
+        <input type="hidden" name="00NJP00000190oG" id="utm_source" />
+        <input type="hidden" name="00NJP00000190oF" id="utm_medium" />
+        <input type="hidden" name="00NJP00000190oE" id="utm_campaign" />
+
+        <!-- First Name (성) -->
+        <div class="field-group">
+          <label class="form-label" for="first_name"
+            >First Name<span class="required-mark">*</span></label
+          >
+          <input
+            class="form-input"
+            id="first_name"
+            maxlength="40"
+            name="first_name"
+            type="text"
+            placeholder="First name"
+            required
+          />
+        </div>
+
+        <!-- Last Name (이름) -->
+        <div class="field-group">
+          <label class="form-label" for="last_name"
+            >Last Name<span class="required-mark">*</span></label
+          >
+          <input
+            class="form-input"
+            id="last_name"
+            maxlength="80"
+            name="last_name"
+            type="text"
+            placeholder="Last name"
+            required
+          />
+        </div>
+
+        <!-- Phone -->
+        <div class="field-group">
+          <label class="form-label" for="phone"
+            >Phone<span class="required-mark">*</span></label
+          >
+          <input
+            class="form-input"
+            id="phone"
+            maxlength="40"
+            name="phone"
+            type="text"
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+
+        <!-- Company -->
+        <div class="field-group">
+          <label class="form-label" for="company_local"
+            >Company<span class="required-mark">*</span></label
+          >
+          <input
+            class="form-input"
+            id="company_local"
+            maxlength="40"
+            name="company_local"
+            type="text"
+            placeholder="Company Name"
+            required
+          />
+        </div>
+
+        <!-- Interests -->
+        <div class="field-group">
+          <label class="form-label"
+            >Interests<span class="required-mark">*</span></label
+          >
+          <div class="interests-grid">
+            <label class="interest-card">
+              <input type="checkbox" name="interests__c" value="Solar LLMs" />
+              <span class="interest-text">
+                <span class="interest-title">Solar LLMs</span>
+                <span class="interest-subtext">(Large Language Models)</span>
+              </span>
+              <svg
+                class="interest-info"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                ></circle>
+                <text
+                  x="10"
+                  y="14"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="currentColor"
+                >
+                  ?
+                </text>
+              </svg>
+            </label>
+
+            <label class="interest-card">
+              <input type="checkbox" name="interests__c" value="Document AI" />
+              <span class="interest-text">
+                <span class="interest-title">Document AI</span>
+              </span>
+              <svg
+                class="interest-info"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                ></circle>
+                <text
+                  x="10"
+                  y="14"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="currentColor"
+                >
+                  ?
+                </text>
+              </svg>
+            </label>
+
+            <label class="interest-card">
+              <input type="checkbox" name="interests__c" value="AI Education" />
+              <span class="interest-text">
+                <span class="interest-title">AI Education</span>
+              </span>
+              <svg
+                class="interest-info"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                ></circle>
+                <text
+                  x="10"
+                  y="14"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="currentColor"
+                >
+                  ?
+                </text>
+              </svg>
+            </label>
+
+            <label class="interest-card">
+              <input type="checkbox" name="interests__c" value="Studio" />
+              <span class="interest-text">
+                <span class="interest-title">Studio</span>
+              </span>
+              <svg
+                class="interest-info"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                ></circle>
+                <text
+                  x="10"
+                  y="14"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="currentColor"
+                >
+                  ?
+                </text>
+              </svg>
+            </label>
+
+            <label class="interest-card">
+              <input
+                type="checkbox"
+                name="interests__c"
+                value="Other Solutions"
+              />
+              <span class="interest-text">
+                <span class="interest-title">Other Solutions</span>
+              </span>
+              <svg
+                class="interest-info"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                ></circle>
+                <text
+                  x="10"
+                  y="14"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="currentColor"
+                >
+                  ?
+                </text>
+              </svg>
+            </label>
+          </div>
+        </div>
+
+        <!-- Usecase -->
+        <div class="field-group">
+          <label class="form-label" for="usecase"
+            >Tell us about your usecase<span class="required-mark"
+              >*</span
+            ></label
+          >
+          <input
+            class="form-input"
+            id="usecase"
+            maxlength="255"
+            name="usecase"
+            type="text"
+            placeholder="Briefly describe your use case or requirements"
+            required
+          />
+        </div>
+        <input class="button" type="submit" name="submit" value="Submit" />
+      </form>
+    </div>
     <script>
-        const p = new URLSearchParams(window.location.search);
-        const utm_source   = p.get('utm_source')   || '(없음)';
-        const utm_medium   = p.get('utm_medium')   || '(없음)';
-        const utm_campaign = p.get('utm_campaign') || '(없음)';
-        const page_slug    = window.location.pathname;
-
-        document.getElementById('utm-debug').innerHTML = `
-            <b>utm_source:</b> ${utm_source}<br>
-            <b>utm_medium:</b> ${utm_medium}<br>
-            <b>utm_campaign:</b> ${utm_campaign}<br>
-            <b>page_slug:</b> ${page_slug}
-        `;
+      const params = new URLSearchParams(window.location.search);
+      // source
+      document.getElementById("utm_source").value =
+        params.get("utm_source") || "";
+      // medium
+      document.getElementById("utm_medium").value =
+        params.get("utm_medium") || "";
+      // campaign
+      document.getElementById("utm_campaign").value =
+        params.get("utm_campaign") || "";
     </script>
-</body>
+  </body>
 </html>
