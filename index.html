@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.c360a.salesforce.com/beacon/c360a/4489b089-e5f0-444c-8f12-fdaca230979b/scripts/c360a.min.js?wtcp_id=1NDKa00000006naOAA"></script>
-    <title>Contact Us (cdn test2)</title>
+    <title>Contact Us (cdn test3)</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
@@ -227,6 +227,7 @@
         <input type="hidden" name="00NJP00000190oG" id="utm_source" />
         <input type="hidden" name="00NJP00000190oF" id="utm_medium" />
         <input type="hidden" name="00NJP00000190oE" id="utm_campaign" />
+        <input type="hidden" name="Campaign_ID" id="Campaign_ID" />
 
         <!-- First Name (성) -->
         <div class="field-group">
@@ -275,7 +276,7 @@
             required
           />
         </div>
-        
+
         <!-- Phone -->
         <div class="field-group">
           <label class="form-label" for="phone"
@@ -493,15 +494,18 @@
     </div>
     <script>
       const params = new URLSearchParams(window.location.search);
-      // source
+      // utm source
       document.getElementById("utm_source").value =
         params.get("utm_source") || "";
-      // medium
+      // utm medium
       document.getElementById("utm_medium").value =
         params.get("utm_medium") || "";
-      // campaign
+      // utm campaign
       document.getElementById("utm_campaign").value =
         params.get("utm_campaign") || "";
+      // utm campaign id
+      document.getElementById("Campaign_ID").value =
+        params.get("campaignid") || "";
     </script>
   </body>
 </html>
